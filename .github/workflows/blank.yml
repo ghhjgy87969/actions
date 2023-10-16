@@ -31,4 +31,4 @@ jobs:
           add: "."
           push: "https://github.com/ghhjgy87969/actions.git"   
        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
