@@ -28,8 +28,8 @@ jobs:
           Riqi=`date +%F`
           UUID1=`curl -L "https://free-ss.site/" |grep 'www.kernels.bid'| grep -oE '[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+'|sed -n '1p'`
           UUID2=`curl -L "https://free-ss.site/" |grep 'www.kernels.bid'| grep -oE '[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+'|sed -n '2p'`
-          echo "vless://${UUID1}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}_www.kernels.bid" > nodes.txt 
-          echo "vless://${UUID2}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}_www.kernels.bid" >> nodes.txt
+          echo "vless://${UUID1}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}_www.kernels.bid1" > nodes.txt 
+          echo "vless://${UUID2}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}_www.kernels.bid2" >> nodes.txt
           
       - name: Commit and Push
         run: |
