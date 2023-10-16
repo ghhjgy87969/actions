@@ -1,0 +1,2 @@
+vless://'+data[3]+'@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#2023-10-16www.kernels.bid
+vless://'+data[3]+'@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#2023-10-16www.kernels.bid
