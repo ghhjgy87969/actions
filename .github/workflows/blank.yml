@@ -27,3 +27,9 @@ jobs:
           git add nodes.txt
           git commit -m "Auto Update by Action"
           git push origin main
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          branch: main
