@@ -1,7 +1,7 @@
 name: Vless_UUID
 on:
   schedule:
-    - cron: "5 * * * *"
+    - cron: "*/5 * * * *"
 #on:
   #push:
    # branches: [ "main" ]
