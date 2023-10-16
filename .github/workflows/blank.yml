@@ -1,0 +1,29 @@
+name: Vless_UUID
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get UUID
+        run: |
+          Riqi=$(date +%F)
+          UUID1=$(curl -L "https://free-ss.site/" | grep -oP '(?<=vless://)[^@]+' | head -n 1)
+          UUID2=$(curl -L "https://free-ss.site/" | grep -oP '(?<=vless://)[^@]+' | head -n 2 | tail -n 1)
+          echo "vless://${UUID1}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}www.kernels.bid" > nodes.txt 
+          echo "vless://${UUID2}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}www.kernels.bid" >> nodes.txt
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "ggrytf89@outlook.com"
+          git config --local user.name "ghhjgy87969"
+          git add nodes.txt
+          git commit -m "Auto Update by Action"
+          git push origin main
