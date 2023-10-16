@@ -1,11 +1,10 @@
 name: Vless_UUID
-#on:
-  #schedule:
-    #- cron: "*/5 * * * *"
+
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
 
 jobs:
   build:
@@ -17,11 +16,11 @@ jobs:
 
       - name: Get UUID
         run: |
-          Riqi=`date +%F`
-          UUID1=`curl -L "https://free-ss.site/" |grep 'www.kernels.bid'| grep -oE '[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+'|sed -n '1p'`
-          UUID2=`curl -L "https://free-ss.site/" |grep 'www.kernels.bid'| grep -oE '[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+'|sed -n '2p'`
-          echo "vless://${UUID1}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}_www.kernels.bid" > node.txt 
-          echo "vless://${UUID2}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}_www.kernels.bid" >> node.txt
+          Riqi=$(date +%F)
+          UUID1=$(curl -L "https://free-ss.site/" | grep 'www.kernels.bid' | grep -oE '[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+' | sed -n '1p')
+          UUID2=$(curl -L "https://free-ss.site/" | grep 'www.kernels.bid' | grep -oE '[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+' | sed -n '2p')
+          echo "vless://${UUID1}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}_www.kernels.bid" > nodes.txt 
+          echo "vless://${UUID2}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}_www.kernels.bid" >> nodes.txt
           
       - name: Commit and Push
         run: |
@@ -29,7 +28,6 @@ jobs:
           git config --local user.name "ghhjgy87969"
           git pull
           git rm --cached nodes.txt
-          git mv node.txt nodes.txt
           git add nodes.txt
           git commit -m "Auto Update by Action"
           git push origin main
