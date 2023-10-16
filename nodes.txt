@@ -1,2 +1,2 @@
-vless://cd64aa89-9e91-9274-d815-6559f999bf50@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#2023-10-16www.kernels.bid
-vless://3814e7ea-eac9-eb83-352d-997fd5d682b4@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#2023-10-16www.kernels.bid
+vless://cd64aa89-9e91-9274-d815-6559f999bf50@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#2023-10-16_www.kernels.bid
+vless://3814e7ea-eac9-eb83-352d-997fd5d682b4@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#2023-10-16_www.kernels.bid
