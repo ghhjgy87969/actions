@@ -13,13 +13,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Get UUID
-        id:uuid
         run: |
-          UUID=$(curl -L "https://free-ss.site/" | grep -oP '(?<=vless://)[^@]+' | head -n 2)
-          IFS=$'\n' read -rd '' -a UUID_ARRAY <<< "$UUID"
-          echo "vless://${UUID_ARRAY[0]}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}www.kernels.bid" > nodes.txt 
-          echo "vless://${UUID_ARRAY[0]}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}www.kernels.bid" >> nodes.txt
-
+          Riqi=`date +%F`
+          UUID1=`curl -L "https://free-ss.site/" |grep 'www.kernels.bid'| grep -oE '[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+'|sed -n '1p'`
+          UUID2=`curl -L "https://free-ss.site/" |grep 'www.kernels.bid'| grep -oE '[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+-[0-9a-fA-F-]+'|sed -n '2p'`
+          echo "vless://${UUID1}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}www.kernels.bid" > nodes.txt 
+          echo "vless://${UUID2}@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#${Riqi}www.kernels.bid" >> nodes.txt
+          
       - name: Commit and Push
         run: |
           git config --local user.email "ggrytf89@outlook.com"
