@@ -1,8 +1,11 @@
 name: Vless_UUID
 on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+  schedule:
+    - cron: "5 * * * *"
+#on:
+  #push:
+   # branches: [ "main" ]
+ # workflow_dispatch:
 
 jobs:
   build:
