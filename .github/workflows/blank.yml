@@ -27,9 +27,9 @@ jobs:
         run: |
           git config --local user.email "ggrytf89@outlook.com"
           git config --local user.name "ghhjgy87969"
-          git add --cached nodes.txt
-          git rm nodes.txt
-          git add nodes.txt
+          git pull
+          git add -u SUB/nodes.txt
+          git rm SUB/nodes.txt
           git commit -m "Auto Update by Action"
           git push origin main
           
