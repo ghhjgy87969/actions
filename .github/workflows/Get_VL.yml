@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Commit and Push
+      - name: Del_Befor and Push
         run: |
           git config --local user.email "ggrytf89@outlook.com"
           git config --local user.name "ghhjgy87969"
@@ -39,7 +39,7 @@ jobs:
           git commit -m "Auto Update by Action"
           git push origin main
           
-      - name: Push changes
+      - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
