@@ -1,10 +1,9 @@
 name: Vless_UUID
-#on:
-  #schedule:
-    #- cron: "*/5 * * * *"
 on:
   push:
     branches: [ "main" ]
+    schedule:
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
