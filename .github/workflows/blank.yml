@@ -29,8 +29,7 @@ jobs:
           git config --local user.name "ghhjgy87969"
           git pull
           git rm nodes.txt
-          git mv node.txt nodes.txt 
-          git add nodes.txt
+          git add node.txt
           git commit -m "Auto Update by Action"
           git push origin main
           
