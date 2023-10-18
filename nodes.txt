@@ -1,0 +1,2 @@
+vless://48fe4124-7ffd-65f4-ef4f-174f076130f2@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#2023-10-18_www.kernels.bid_01
+vless://d7fc6e25-5a5e-1219-9f04-8a38d74101c1@www.kernels.bid:443?flow=&encryption=none&security=tls&sni=&type=ws&host=&path=/ws&headerType=none&alpn=&fp=&pbk=&sid=&spx=#2023-10-18_www.kernels.bid_02
