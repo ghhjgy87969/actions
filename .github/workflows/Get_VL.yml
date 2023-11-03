@@ -18,10 +18,12 @@ jobs:
           git config --local user.email "ggrytf89@outlook.com"
           git config --local user.name "ghhjgy87969"
           git pull
-          if [ ! -f "A.txt" ]; then
-              touch A.txt
-          fi
-          git rm vl
+          if [ ! -f "vl" ]; then
+              echo "vl not exist"
+          else
+              git rm vl
+              echo "vl deleted"
+          fi 
           git commit -m "del befor"
           git push origin main
           
