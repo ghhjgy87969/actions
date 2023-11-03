@@ -19,8 +19,8 @@ jobs:
           git config --local user.name "ghhjgy87969"
           git pull
           if [ ! -f "vl" ]; then
-              touch vl | git add vl
-              echo "vl created"
+              echo "vl created" >vl
+              git add vl
           fi
           git rm vl
           git commit -m "del befor"
