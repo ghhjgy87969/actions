@@ -18,6 +18,9 @@ jobs:
           git config --local user.email "ggrytf89@outlook.com"
           git config --local user.name "ghhjgy87969"
           git pull
+          if [ ! -f "A.txt" ]; then
+              touch A.txt
+          fi
           git rm vl
           git commit -m "del befor"
           git push origin main
