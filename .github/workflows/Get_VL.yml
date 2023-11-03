@@ -19,11 +19,10 @@ jobs:
           git config --local user.name "ghhjgy87969"
           git pull
           if [ ! -f "vl" ]; then
-              echo "vl not exist"
-          else
-              git rm vl
-              echo "vl deleted"
-          fi 
+              touch vl | git add vl
+              echo "vl created"
+          fi
+          git rm vl
           git commit -m "del befor"
           git push origin main
           
