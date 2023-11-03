@@ -18,14 +18,14 @@ jobs:
           git config --local user.email "ggrytf89@outlook.com"
           git config --local user.name "ghhjgy87969"
           git pull
-          if [ ! -f "vl" ]; then
-              echo "vl created" >vl
-              git add vl
-          fi
-          git rm vl
-          git commit -m "del befor"
-          git push origin main
-          
+          if [ -f "A.txt" ]; then
+              git rm vl
+              git commit -m "del befor"
+              git push origin main
+          else    
+              git commit -m "del befor"
+              git push origin main
+          fi   
       - name: Get UUID
         run: |
           Riqi=`date +%F`
